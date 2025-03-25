@@ -5,12 +5,8 @@ let user = [
   {id : 'ss'}
 ]
 
-const book = [
-  {bookName : '게시판', bookbtn : '작성'}
-]
-
 let user_json = JSON.stringify(user);
-// localStorage.setItem('use', user_json);
+localStorage.setItem('use', user_json);
 user = JSON.parse(localStorage.getItem('use'));
 
 console.log(user);
@@ -36,4 +32,21 @@ document.querySelector('form').addEventListener('submit', function(e) {
   }
   alert('다시 확인하세요.')
 });
+// ------------------------------------------------------------------------- //
+
+// document.getElementById("test").addEventListener("submit", function (event) {
+//   event.preventDefault(); // 기본 폼 제출 방지
+
+//   const userId = document.getElementById("userId").value;
+//   const userPw = document.getElementById("userPw").value;
+
+//   if (userId && userPw) {
+//       localStorage.setItem("userId", userId); // 사용자 정보 저장
+//       alert("로그인 성공!");
+//       window.location.href = "index.html"; // 로그인 후 메인 페이지로 이동
+//   } else {
+//       alert("아이디와 비밀번호를 입력하세요.");
+//   }
+// });
+
 

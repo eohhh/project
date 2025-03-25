@@ -31,6 +31,14 @@
       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
    </head>
    <body>
+      <nav>
+         <ul>
+             <li><a href="login.html" id="signInBtn">Sign In</a></li>
+             <li><a href="contact.html" id="signUpBtn">Sign Up</a></li>
+             <li><a href="#" id="logoutBtn" style="display: none;">Logout</a></li>
+         </ul>
+     </nav>
+     
       <!-- header section start -->
       <div class="header_section">
          <div class="container">
@@ -44,9 +52,9 @@
                      <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
-                     <li class="nav-item">
+                     <!-- <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Profile</a>
-                     </li>
+                     </li> -->
                      <li class="nav-item">
                         <a class="nav-link" href="service.html">Guestbook</a>
                      </li>
@@ -58,6 +66,15 @@
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="" onclick="logout();">logout</a>
+
+
+                        <ul>
+                           <li><a href="blog.html" id="signInBtn">Sign In</a></li>
+                           <li><a href="contact.html" id="signUpBtn">Sign Up</a></li>
+                           <li><a href="#" id="logoutBtn" style="display: none;">Logout</a></li>
+                       </ul>
+
+
                      </li>
                   </ul>
                </div>
@@ -80,7 +97,7 @@
                               <div class="row">
                                  <div class="col-md-6">
                                     <div class="banner_taital_main">
-                                       <h1 class="banner_taital">Eoh Jin<br>I'm Yd_Student.</h1>
+                                       <h1 class="banner_taital">Eoh Jin<br></h1>
                                     </div>
                                  </div>
                                  <div class="col-md-6">
@@ -446,6 +463,33 @@
                 $(this).off("touchmove");
             });
          });
+
+         document.addEventListener("DOMContentLoaded", function () {
+    const signInBtn = document.getElementById("signInBtn");
+    const signUpBtn = document.getElementById("signUpBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    // 로그인 상태 확인 (예: localStorage에 userId가 저장되어 있으면 로그인 상태)
+    const isLoggedIn = localStorage.getItem("userId");
+
+    if (isLoggedIn) {
+        signInBtn.style.display = "none";
+        signUpBtn.style.display = "none";
+        logoutBtn.style.display = "block";
+    } else {
+        signInBtn.style.display = "block";
+        signUpBtn.style.display = "block";
+        logoutBtn.style.display = "none";
+    }
+
+    // 로그아웃 버튼 클릭 시 로그아웃 처리
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("userId"); // 로그인 정보 삭제
+        alert("로그아웃 되었습니다.");
+        location.reload(); // 페이지 새로고침
+    });
+});
+
          // function logout() {
          //    localStorage.removeItem('sign');
          //    alert('로그아웃 되었습니다.');

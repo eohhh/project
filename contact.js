@@ -26,3 +26,20 @@ document.querySelector('form').addEventListener('submit', function (e) {
     break;
   }
 })
+// -------------------------------------------------------------------------- //
+
+// document.getElementById("btn").addEventListener("click", function (event) {
+//   event.preventDefault(); // 기본 폼 제출 방지
+
+//   const userName = document.getElementById("userName").value;
+//   const userId = document.getElementById("id").value;
+//   const userPw = document.getElementById("pw").value;
+
+//   if (userName && userId && userPw) {
+//       localStorage.setItem("userId", userId); // 회원가입 후 자동 로그인
+//       alert("회원가입 완료! 자동 로그인되었습니다.");
+//       window.location.href = "index.html";
+//   } else {
+//       alert("모든 정보를 입력하세요.");
+//   }
+// });
